@@ -11,12 +11,14 @@ export default function CharacterContainer() {
     useEffect(() => {
         fetch(BASE_URL + 'characters')
           .then(r => r.json())
-                .then(charactersRes => setCharacters(charactersRes));
+                .then(json => setCharacters(json));
     }, [])
 
     function populateCharacters() {
-        return characters.map(character => <Character character={character} deleteCharacter={deleteCharacter} updateCharacter={updateCharacter} key={character.id}/>)
+        return characters.map((character, idx) => (
+            <Character character={character} deleteCharacter={deleteCharacter} updateCharacter={updateCharacter} key={character.id} />)
             
+        );
     }
     
     //Create
@@ -30,7 +32,7 @@ export default function CharacterContainer() {
             }
         })
             .then(res => res.json())
-            .then(json => setCharacters([...characters,json]))
+            .then(json => setCharacters([...characters, json]));
     }
 
 
@@ -55,13 +57,13 @@ export default function CharacterContainer() {
                 "Accept": "application/json",
                 "Content-Type": "application/json"
             }
-        })
+        });
 
         const newCharacters = characters.map(c => {
             if (c.id === character.id) {
                 c = character
             }
-            return c
+            return c;
         })
         setCharacters(newCharacters)
     }

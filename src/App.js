@@ -9,6 +9,7 @@ import HomePage from "./Components/HomePage";
 
 
 
+
 function App() {
   return (
     <Router>
@@ -17,7 +18,7 @@ function App() {
         <NavBar />
         <Switch>
           <Route exact path="/">
-            <h2>Home</h2>
+            <HomePage />
           </Route>
           <Route exact path="/characters/">
             <CharacterContainer />
@@ -33,4 +34,3 @@ function App() {
 
 export default App;
 
-//review QuoteContainer component

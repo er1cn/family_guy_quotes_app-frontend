@@ -1,7 +1,7 @@
 import React from 'react';
 import StarRating from '../StarRating';
 
-export default function Quote({Quote}) {
+export default function Quote({quote}) {
     return (
         <div className="card">
             <StarRating />
