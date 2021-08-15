@@ -1,13 +1,36 @@
 import "./App.css";
 import CharacterContainer from "./Components/CharacterContainer/CharacterContainer";
-import QuoteContainer from "./Components/QuoteContainer/QuoteContainer";
+import {BrowserRouter as Router} from 'react-router-dom'
+import { Switch, Route } from "react-router-dom";
+import CharacterQuotes from "./Components/CharacterContainer/CharacterQuotes";
+import NavBar from "./Components/NavBar";
+import HomePage from "./Components/HomePage";
+
+
+
+
 function App() {
   return (
-    <div className="App">
-      <CharacterContainer />
-      <QuoteContainer />
-    </div>
+    <Router>
+      <div className="app-container">
+        <div className="app-background"/>
+        <NavBar />
+        <Switch>
+          <Route exact path="/">
+            <h2>Home</h2>
+          </Route>
+          <Route exact path="/characters/">
+            <CharacterContainer />
+          </Route>
+          <Route path="/characters/:id">
+            <CharacterQuotes />
+          </Route>
+        </Switch>
+      </div>
+    </Router>
   );
 }
 
 export default App;
+
+//review QuoteContainer component

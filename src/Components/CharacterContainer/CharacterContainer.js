@@ -67,10 +67,11 @@ export default function CharacterContainer() {
     }
      
     return (
-        <div>
-            <h1>Characters</h1>
-            {characters && populateCharacters()}
-            <CharacterForm createCharacter={createCharacter} />
-        </div>
-    )    
+      <div>
+        <h2 className="character-header">All Characters</h2>
+        <div className="character-container">{characters && populateCharacters()}</div>
+
+        <CharacterForm createCharacter={createCharacter} />
+      </div>
+    );    
 }
