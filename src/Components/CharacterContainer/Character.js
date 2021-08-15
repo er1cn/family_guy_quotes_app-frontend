@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 
-export default function Character({ character, deleteCharacter }) {
+export default function Character({ character, deleteCharacter, updateCharacter }) {
     const [newCharacter, setNewCharacter] = useState({ ...character })
 
     function handleChange(e) {
@@ -23,9 +23,9 @@ export default function Character({ character, deleteCharacter }) {
         <div>
             <br />
             <p>{character.name}</p>
-            <button onClick={handleUpdate}>Delete Character</button>
+            <button onClick={() => deleteCharacter(character)}>Delete Character</button>
 
-            <form onSubmit={(e) => { e.preventDefault() }}>
+            <form onSubmit={(handleUpdate)}>
                 <input name="name" value={newCharacter.name} onChange={handleChange} />
                 <button type="submit">Update Character</button>
 
