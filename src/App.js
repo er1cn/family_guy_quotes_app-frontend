@@ -4,7 +4,6 @@ import { Switch, Route } from "react-router-dom";
 import CharacterQuotes from "./Components/CharacterContainer/CharacterQuotes";
 import NavBar from "./Components/NavBar";
 import HomePage from "./Components/HomePage";
-import './App.css';
 
 
 

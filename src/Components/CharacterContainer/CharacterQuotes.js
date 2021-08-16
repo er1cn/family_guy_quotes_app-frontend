@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import { BASE_URL } from '../Constraints/index';
 import QuoteForm from '../QuoteContainer/QuoteForm';
 import StarRating from '../StarRating';
-import '../styles/CharacterQuotes.css'
+
 
 
 export default function CharacterQuotes() {
@@ -43,10 +43,10 @@ export default function CharacterQuotes() {
     <div>
       {character && (
         <>
-          <p>character Name: {character.name}</p>
+          <p>name: {character.name}</p>
           <StarRating />
           <h3>Quotes</h3>
-          <h3>Add new character </h3>
+          <h3>Add new quote </h3>
           <QuoteForm createQuote={createQuote} />
         </>
       )}

@@ -3,7 +3,6 @@ import { BASE_URL } from '../Constraints/index';
 import Character from "./Character";
 import CharacterForm from "./CharacterForm";
 
-
 export default function CharacterContainer() {
     const [characters, setCharacters] = useState(null);
     
