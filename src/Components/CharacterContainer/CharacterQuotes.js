@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { BASE_URL } from '../Constraints/index';
-import Quote from '../QuoteContainer/Quote';
 import QuoteForm from '../QuoteContainer/QuoteForm';
 import StarRating from '../StarRating';
 

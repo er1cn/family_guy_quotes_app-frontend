@@ -1,4 +1,3 @@
-import "./App.css";
 import CharacterContainer from "./Components/CharacterContainer/CharacterContainer";
 import {BrowserRouter as Router} from 'react-router-dom'
 import { Switch, Route } from "react-router-dom";

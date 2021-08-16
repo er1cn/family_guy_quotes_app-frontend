@@ -2,6 +2,7 @@ import React, { useState,useEffect } from "react";
 import { BASE_URL } from '../Constraints/index';
 import Character from "./Character";
 import CharacterForm from "./CharacterForm";
+import '../Styles/CharacterContainer.css'
 
 
 export default function CharacterContainer() {

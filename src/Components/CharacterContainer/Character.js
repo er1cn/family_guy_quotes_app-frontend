@@ -35,14 +35,12 @@ export default function Character({ character, deleteCharacter, updateCharacter,
 
     return (
         <div className="card">
-            <Link to={`/characters/$characters.id}`}>
+            <Link to={`/characters/${character.id}`}>
                 <p>{character.name}</p>
             </Link>
 
-            {
-                editMode && (
+            {editMode && (
                 <>
-        
             <button onClick={() => deleteCharacter(character)}>Delete Character</button>
 
             <form onSubmit={(handleUpdate)}>
