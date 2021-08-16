@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import { BASE_URL } from '../Constraints/index';
 import QuoteForm from '../QuoteContainer/QuoteForm';
 import StarRating from '../StarRating';
+import '../styles/CharacterQuotes.css'
 
 
 export default function CharacterQuotes() {

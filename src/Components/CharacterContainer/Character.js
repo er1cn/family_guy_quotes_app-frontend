@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
 
 
+
 export default function Character({ character, deleteCharacter, updateCharacter, initialDelay=0 }) {
     const [newCharacter, setNewCharacter] = useState({ ...character });
     const [editMode, setEditMode] = useState(false);
@@ -34,22 +35,28 @@ export default function Character({ character, deleteCharacter, updateCharacter,
   }
 
     return (
-        <div className="card">
-            <Link to={`/characters/${character.id}`}>
-                <p>{character.name}</p>
-            </Link>
+      <div className="card">
+        <Link to={`/characters/${character.id}`}>
+          <p>{character.name}</p>
+        </Link>
 
-            {editMode && (
-                <>
-            <button onClick={() => deleteCharacter(character)}>Delete Character</button>
+        {editMode && (
+          <>
+            <button onClick={() => deleteCharacter(character)}>
+              Delete Character
+            </button>
 
-            <form onSubmit={(handleUpdate)}>
-                <input name="name" value={newCharacter.name} onChange={handleChange} />
-                <button type="submit">Update Character</button>
+            <form onSubmit={handleUpdate}>
+              <input
+                name="name"
+                value={newCharacter.name}
+                onChange={handleChange}
+              />
+              <button type="submit">Update Character</button>
             </form>
-           </>
-          )}
-          <button onClick = {toggleEdit}>Edit</button>
-        </div>
-    )
+          </>
+        )}
+        <button onClick={toggleEdit}>Edit</button>
+      </div>
+    );
 }
